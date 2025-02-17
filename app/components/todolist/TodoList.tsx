@@ -41,9 +41,6 @@ const TodoList = () => {
     return (
         <div>
             <h1>My Todo List</h1>
-
-
-
             <div style={{ padding: "10px" }}>
                 <input style={inputStyles} onChange={(e) => dispatch(onchangeText(e.target.value))} type="text" value={task} />
                 <button onClick={() => dispatch(addTask())}>Add task</button>
@@ -60,7 +57,7 @@ const TodoList = () => {
                             <li style={liststyles} key={index + 1}>
                                 <input style={inputStyles} type="text" value={item?.task} onChange={(e) => dispatch(listItem({ id: index, data: e.target.value }))} />
                                 <input style={{ marginRight: "10px" }} type="checkbox" checked={item?.isCompleted} onChange={() => dispatch(toggleTaskCompletion(index))} />
-                                <button style={styles} onClick={()=>dispatch(deleteTask(index))}>Delete</button>
+                                <button style={styles} onClick={() => dispatch(deleteTask(index))}>Delete</button>
                                 <button style={updatestyles}>Update</button>
                             </li>
                         ))
